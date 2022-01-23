@@ -34,7 +34,7 @@ class TestC(unittest.TestCase):
     #@unpack
     @file_data('login.json')
     def test_yn_login(self, case, name, password):
-
+        print("IS_OK2 ")
         self.login(name, password)
         lg = LoginPage(self.driver)
         mingzi = lg.login_name()
