@@ -35,7 +35,7 @@ class TestC(unittest.TestCase):
     #@unpack
     @file_data('login.json')
     def test_yn_login(self, case, name, password):
-        print("IS_OK2 ")
+        print("IS_OK22 ")
         print(sys.path)
         self.login(name, password)
         lg = LoginPage(self.driver)
@@ -54,7 +54,6 @@ class TestC(unittest.TestCase):
 if __name__ == '__main__':
     #suit = unittest.TestSuite()
     #suit.addTest(TestC("test_yn_login"))
-
     #runner = unittest.TextTestRunner()
     #runner.run(suit)
     unittest.main(verbosity=2)
