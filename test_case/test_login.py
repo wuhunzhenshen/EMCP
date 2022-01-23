@@ -49,10 +49,10 @@ class TestC(unittest.TestCase):
         cls.driver.quit()
 
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
     #suit = unittest.TestSuite()
     #suit.addTest(TestC("test_yn_login"))
 
     #runner = unittest.TextTestRunner()
     #runner.run(suit)
-    unittest.main(verbosity=2)
+    #unittest.main(verbosity=2)
