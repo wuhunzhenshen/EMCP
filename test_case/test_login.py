@@ -4,7 +4,6 @@ import unittest
 import warnings
 import sys
 from ddt import ddt, data, file_data, unpack
-
 from login_page import LoginPage
 
 
@@ -22,7 +21,6 @@ class TestC(unittest.TestCase):
         time.sleep(1)
 
     def login(self, name, password):
-
         warnings.simplefilter('ignore', ResourceWarning)
         lg = LoginPage(self.driver)
         lg.name_input(name)
@@ -31,11 +29,8 @@ class TestC(unittest.TestCase):
         lg.login_button()
         time.sleep(2)
 
-    #@data(("case1", "gl3", "11111111"), ("case2", "gl6", "11111111"))
-    #@unpack
     @file_data('login.json')
     def test_yn_login(self, case, name, password):
-        print("IS_OK22 ")
         print(sys.path)
         self.login(name, password)
         lg = LoginPage(self.driver)
@@ -52,8 +47,8 @@ class TestC(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    #suit = unittest.TestSuite()
-    #suit.addTest(TestC("test_yn_login"))
-    #runner = unittest.TextTestRunner()
-    #runner.run(suit)
+    # suit = unittest.TestSuite()
+    # suit.addTest(TestC("test_yn_login"))
+    # runner = unittest.TextTestRunner()
+    # runner.run(suit)
     unittest.main(verbosity=2)
