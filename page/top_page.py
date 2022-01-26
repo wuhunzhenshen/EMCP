@@ -31,5 +31,5 @@ class TopPage:
         self.driver.find_element(By.XPATH, '//*[@id="app"]/section/header/div/ul/li[6]').click()
 
     # 用户中心
-    def usercenter_button(self):
+    def user_center_button(self):
         self.driver.find_element(By.XPATH, '//*[@id="app"]/section/header/div/ul/li[7]').click()
