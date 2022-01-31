@@ -7,7 +7,7 @@ from ddt import ddt, data, file_data, unpack
 from login_page import LoginPage
 from top_page import TopPage
 from left_page import LeftPage
-
+from zutaimange_page import ZutaimangePage
 
 @ddt
 class Test_data_center(unittest.TestCase):
@@ -56,10 +56,21 @@ class Test_data_center(unittest.TestCase):
         # 点击数据中心
         time.sleep(2)
         data_center = LeftPage(self.driver)
-        time.sleep(2)
+        time.sleep(1)
         data_center.data_center_mange_button()
-        time.sleep(2)
+        time.sleep(1)
         data_center.data_center_zutai_mange_button()
+
+        # 关闭引导页
+        time.sleep(2)
+        data_center.data_center_leader()
+
+        # 组态编辑
+        time.sleep(2)
+        zutai = ZutaimangePage(self.driver)
+        zutai.shuxiankuang_button()
+
+
 
     # 关闭浏览器
     @classmethod

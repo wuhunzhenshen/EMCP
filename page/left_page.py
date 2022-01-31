@@ -34,6 +34,17 @@ class LeftPage:
     def data_center_zutai_mange_button(self):
         self.driver.find_element(By.XPATH, '//*[@id="app"]/section/section/main/div/div[3]/div/div[3]/button[1]').click()
 
+    # 关闭数据中心引导页
+    def data_center_leader(self):
+        # 定位当前页
+        windows = self.driver.window_handles
+
+        # 定位新打开的页面
+        self.driver.switch_to.window(windows[-1])
+
+        # 关闭引导弹窗
+        self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/button').click()
+
     # 运营中心管理
     def opera_center_mange_button(self):
         self.driver.find_element(By.XPATH, '//*[@id="app"]/section/section/aside/ul/li[3]').click()
