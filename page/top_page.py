@@ -20,7 +20,7 @@ class TopPage:
 
     # 后台管理
     def management_button(self):
-        self.driver.find_element(By.XPATH, '//*[@id="app"]/section/header/div/ul/li[4]').click()
+        self.driver.find_element(By.XPATH, '//*[@id="app"]/section/header/div/ul/li[4]/span').click()
 
     # 帮助
     def help_button(self):
