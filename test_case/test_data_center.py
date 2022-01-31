@@ -9,6 +9,7 @@ from top_page import TopPage
 from left_page import LeftPage
 from zutaimange_page import ZutaimangePage
 
+
 @ddt
 class Test_data_center(unittest.TestCase):
     base_url = None
@@ -68,9 +69,11 @@ class Test_data_center(unittest.TestCase):
         # 组态编辑
         time.sleep(2)
         zutai = ZutaimangePage(self.driver)
-        zutai.shuxiankuang_button()
-
-
+        #打开设置背景色
+        zutai.backcolor_button()
+        time.sleep(2)
+        # 选择背景颜色
+        zutai.backcolor_orange_button
 
     # 关闭浏览器
     @classmethod

@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+import time
 
 
 class LeftPage:
@@ -32,17 +33,21 @@ class LeftPage:
 
     # 数据中心组态编辑
     def data_center_zutai_mange_button(self):
-        self.driver.find_element(By.XPATH, '//*[@id="app"]/section/section/main/div/div[3]/div/div[3]/button[1]').click()
+        self.driver.find_element(By.XPATH,
+                                 '//*[@id="app"]/section/section/main/div/div[3]/div/div[3]/button[1]').click()
 
     # 关闭数据中心引导页
     def data_center_leader(self):
-        # 定位当前页
+        # 是获取当前的所有窗口
+        time.sleep(1)
         windows = self.driver.window_handles
 
         # 定位新打开的页面
+        time.sleep(1)
         self.driver.switch_to.window(windows[-1])
 
         # 关闭引导弹窗
+        time.sleep(1)
         self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/button').click()
 
     # 运营中心管理
