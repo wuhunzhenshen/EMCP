@@ -71,9 +71,9 @@ class Test_data_center(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    suit = unittest.TestSuite()
-    suit.addTest(Test_data_center("test_1_login"))
-    suit.addTest(Test_data_center("test_2_data_center_mange"))
-    runner = unittest.TextTestRunner()
-    runner.run(suit)
-# unittest.main(verbosity=2)
+    # suits = unittest.TestSuite()
+    # suits.addTest(Test_data_center("test_1_login"))
+    # suits.addTest(Test_data_center("test_2_data_center_mange"))
+    # runner = unittest.TextTestRunner()
+    # runner.run(suits)
+    unittest.main(verbosity=2)
