@@ -20,7 +20,7 @@ class TopPage:
 
     # 后台管理
     def management_button(self):
-        self.driver.find_element(By.XPATH, '//*[@id="app"]/section/header/div/ul/li[4]/span').click()
+        self.driver.find_element(By.XPATH, '//*[@id="app"]/section/header/div/ul/li[4]').click()
 
     # 帮助
     def help_button(self):
@@ -33,3 +33,7 @@ class TopPage:
     # 用户中心
     def user_center_button(self):
         self.driver.find_element(By.XPATH, '//*[@id="app"]/section/header/div/ul/li[7]').click()
+
+    def user_name(self):
+        var = self.driver.find_element(By.CLASS_NAME, 'username').text
+        return var

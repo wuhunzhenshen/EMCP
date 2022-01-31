@@ -3,7 +3,7 @@ from HTMLTestRunner import HTMLTestRunner
 
 
 test_dir = "./test_case"
-suits = unittest.defaultTestLoader.discover(test_dir, pattern='test_login.py')
+suits = unittest.defaultTestLoader.discover(test_dir, pattern='test_data_center.py')
 if __name__ == '__main__':
     fp = open('./test_report/result.html', 'wb')
     # runner = unittest.TextTestRunner(verbosity=2)

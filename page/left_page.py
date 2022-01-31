@@ -32,7 +32,7 @@ class LeftPage:
 
     # 数据中心组态编辑
     def data_center_zutai_mange_button(self):
-        self.driver.find_element(By.LINK_TEXT, "组态管理").click()
+        self.driver.find_element(By.XPATH, '//*[@id="app"]/section/section/main/div/div[3]/div/div[3]/button[1]').click()
 
     # 运营中心管理
     def opera_center_mange_button(self):

@@ -35,38 +35,45 @@ class Test_data_center(unittest.TestCase):
 
     # 登录
     @file_data('login.json')
-    def test_yn_login(self, name, password):
+    def test_1_login(self, name, password):
         self.login(name, password)
         lg = LoginPage(self.driver)
         mingzi = lg.login_name()
         print(" 用户: " + mingzi + " 登录成功")
         self.assertIn(mingzi, name)
-        time.sleep(2)
+        time.sleep(1)
 
     # 找到数据中心
-    def test_find_data_center_mange(self):
+    def test_2_data_center_mange(self):
         # 点击后台管理
-        time.sleep(2)
+        time.sleep(1)
         mange = TopPage(self.driver)
+        time.sleep(2)
+        name = mange.user_name()
+        print(name)
         mange.management_button()
 
         # 点击数据中心
         time.sleep(2)
         data_center = LeftPage(self.driver)
+        time.sleep(2)
         data_center.data_center_mange_button()
+        time.sleep(2)
         data_center.data_center_zutai_mange_button()
 
     # 关闭浏览器
     @classmethod
     def tearDownClass(cls):
+        time.sleep(20)
         cls.driver.back()
         time.sleep(2)
         cls.driver.quit()
 
 
 if __name__ == '__main__':
-    # suit = unittest.TestSuite()
-    # suit.addTest(TestC("test_yn_login"))
-    # runner = unittest.TextTestRunner()
-    # runner.run(suit)
-    unittest.main(verbosity=2)
+    suit = unittest.TestSuite()
+    suit.addTest(Test_data_center("test_1_login"))
+    suit.addTest(Test_data_center("test_2_data_center_mange"))
+    runner = unittest.TextTestRunner()
+    runner.run(suit)
+# unittest.main(verbosity=2)
