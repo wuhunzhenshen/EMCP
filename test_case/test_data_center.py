@@ -32,7 +32,7 @@ class Test_data_center(unittest.TestCase):
         lg.password_input(password)
         time.sleep(0.3)
         lg.login_button()
-        time.sleep(2)
+        time.sleep(1)
 
     # 登录
     @file_data('login.json')
@@ -42,22 +42,22 @@ class Test_data_center(unittest.TestCase):
         mingzi = lg.login_name()
         print(" 用户: " + mingzi + " 登录成功")
         self.assertIn(mingzi, name)
-        time.sleep(1)
+        time.sleep(0.3)
 
     # 找到数据中心
     def test_2_data_center_mange(self):
         # 点击后台管理
-        time.sleep(1)
+        time.sleep(0.3)
         mange = TopPage(self.driver)
-        time.sleep(2)
+        time.sleep(1)
         name = mange.user_name()
         print(name)
         mange.management_button()
 
         # 点击数据中心
-        time.sleep(2)
-        data_center = LeftPage(self.driver)
         time.sleep(1)
+        data_center = LeftPage(self.driver)
+        time.sleep(0.3)
         data_center.data_center_mange_button()
         time.sleep(1)
         data_center.data_center_zutai_mange_button()
@@ -67,17 +67,24 @@ class Test_data_center(unittest.TestCase):
         data_center.data_center_leader()
 
         # 组态编辑
-        time.sleep(2)
+        time.sleep(1)
         zutai = ZutaimangePage(self.driver)
-        #打开设置背景色
+        # 打开设置背景色
         zutai.backcolor_button()
+        time.sleep(5)
+        # 选择背景颜色为橙色
+        zutai.backcolor_blue_button()
         time.sleep(2)
-        # 选择背景颜色
-        zutai.backcolor_orange_button
+        # 设置背景色透明度
+        zutai.backcolor_trans()
+        time.sleep(2)
+        # 关闭背景色设置弹窗
+        zutai.backcolor_close_button()
 
     # 关闭浏览器
     @classmethod
     def tearDownClass(cls):
+
         time.sleep(20)
         cls.driver.back()
         time.sleep(2)
