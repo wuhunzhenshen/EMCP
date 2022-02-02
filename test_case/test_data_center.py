@@ -50,8 +50,6 @@ class Test_data_center(unittest.TestCase):
         time.sleep(0.3)
         mange = TopPage(self.driver)
         time.sleep(1)
-        name = mange.user_name()
-        print(name)
         mange.management_button()
 
         # 点击数据中心
@@ -66,25 +64,37 @@ class Test_data_center(unittest.TestCase):
         time.sleep(2)
         data_center.data_center_leader()
 
+    def test_3_backcolor_mange(self):
         # 组态编辑
         time.sleep(1)
         zutai = ZutaimangePage(self.driver)
         # 打开设置背景色
         zutai.backcolor_button()
-        time.sleep(5)
+        time.sleep(2)
         # 选择背景颜色为橙色
+        zutai.backcolor_red_button()
+        time.sleep(0.3)
         zutai.backcolor_blue_button()
-        time.sleep(2)
+        time.sleep(0.3)
+        zutai.backcolor_orange_button()
+        time.sleep(0.3)
         # 设置背景色透明度
-        zutai.backcolor_trans()
-        time.sleep(2)
+        zutai.backcolor_trans("0.3")
+        time.sleep(0.3)
+        zutai.backcolor_trans("0.5")
+        time.sleep(0.3)
+        zutai.backcolor_trans("0.9")
+        print("背景透明度为： ", zutai.backcolor_trans2().get_attribute("value"))
+        # 判断背景颜色
+        hex2 = zutai.backcolor_hex().get_attribute("value")
+        self.assertIn("FF8D02", hex2)
+        print("背景HEX颜色为： ", hex2)
         # 关闭背景色设置弹窗
         zutai.backcolor_close_button()
 
     # 关闭浏览器
     @classmethod
     def tearDownClass(cls):
-
         time.sleep(20)
         cls.driver.back()
         time.sleep(2)
