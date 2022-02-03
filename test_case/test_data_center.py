@@ -71,6 +71,7 @@ class Test_data_center(unittest.TestCase):
         # 打开设置背景色
         zutai.backcolor_button()
         time.sleep(2)
+
         # 选择背景颜色为橙色
         zutai.backcolor_red_button()
         time.sleep(0.2)
@@ -94,6 +95,7 @@ class Test_data_center(unittest.TestCase):
         zutai.backcolor_close_button()
         time.sleep(0.6)
         # 勾选自定义分辨率
+
         zutai.custom_resolution_button()
         time.sleep(1)
         # 设置宽和高
@@ -112,13 +114,21 @@ class Test_data_center(unittest.TestCase):
             print("分辨率设置成功！宽为：" + wi, "高为：" + he)
         else:
             print("分辨率设置失败！")
+
         # 设置页面密码
         keys3 = "123456"
-        zutai.set_page_key(keys3)
-        zutai.slave_button()
-        # 判断页面密码是否设置成功
+        if zutai.read_set_page_key():
+            zutai.input_page_key(keys3)
+            time.sleep(1)
+            zutai.slave_button()
+        else:
+            zutai.set_page_key()
+            zutai.input_page_key(keys3)
+            zutai.slave_button()
+            # 判断页面密码是否设置成功
         pagekeys = zutai.read_page_key()
         self.assertIn(keys3, pagekeys)
+        print("页面密码为："+pagekeys)
 
     # 关闭浏览器
     @classmethod

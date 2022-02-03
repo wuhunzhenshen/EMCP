@@ -105,9 +105,12 @@ class ZutaimangePage:
         return var
 
     # 设置页面密码
-    def set_page_key(self, key2):
+    def set_page_key(self):
         self.driver.find_element(By.XPATH, '//*[@id="formBar"]/aside[1]/div/div[2]/'
                                            'div/div[3]/div[2]/div[1]/label/span[1]').click()
+
+    # 输入页面密码
+    def input_page_key(self, key2):
         time.sleep(1)
         self.driver.find_element(By.XPATH, '//*[@id="formBar"]/aside[1]/div/div[2]/'
                                            'div/div[3]/div[2]/div[2]/form/div/div/div/input').clear()
@@ -122,3 +125,12 @@ class ZutaimangePage:
                                                  'div/div[3]/div[2]/div[2]/form/div/div/'
                                                  'div/input').get_attribute("value")
         return var
+
+    # 判断是否勾选启用页面密码
+    def read_set_page_key(self):
+        var = self.driver.find_element(By.XPATH, '//*[@id="formBar"]/aside[1]/div/div[2]/'
+                                                 'div/div[3]/div[2]/div[1]/label/span[1]').get_attribute("class")
+        if var == "el-checkbox__input is-checked":
+            return True
+        else:
+            return False
