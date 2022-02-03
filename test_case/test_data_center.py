@@ -115,7 +115,9 @@ class Test_data_center(unittest.TestCase):
         else:
             print("分辨率设置失败！")
 
+    def test_4_page_key(self):
         # 设置页面密码
+        zutai = ZutaimangePage(self.driver)
         keys3 = "123456"
         if zutai.read_set_page_key():
             zutai.input_page_key(keys3)
