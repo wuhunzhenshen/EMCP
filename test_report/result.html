@@ -194,9 +194,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>测试报告</h1>
-<p class='attribute'><strong>Start Time:</strong> 2022-02-02 19:41:08</p>
-<p class='attribute'><strong>Duration:</strong> 0:01:19.057739</p>
-<p class='attribute'><strong>Status:</strong> Pass 4</p>
+<p class='attribute'><strong>Start Time:</strong> 2022-02-03 19:07:00</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:42.624086</p>
+<p class='attribute'><strong>Status:</strong> Pass 1 Error 2</p>
 
 <p class='description'></p>
 </div>
@@ -226,12 +226,12 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>test_data_center.Test_data_center</td>
     <td>3</td>
-    <td>3</td>
+    <td>1</td>
     <td>0</td>
-    <td>0</td>
+    <td>2</td>
     <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
 </tr>
 
@@ -259,27 +259,50 @@ pt1.1:
     </td>
 </tr>
 
-<tr id='pt1.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_2_data_center_mange</div></td>
-    <td colspan='5' align='center'>pass</td>
-</tr>
-
-<tr id='pt1.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_3_backcolor_mange</div></td>
+<tr id='ft1.2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_2_data_center_mange</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
+        error</a>
 
-    <div id='div_pt1.3' class="popup_window">
+    <div id='div_ft1.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.3: 
+ft1.2: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 65, in test_2_data_center_mange
+    data_center.data_center_leader()
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\left_page.py", line 51, in data_center_leader
+    self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/button').click()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div[1]/button"}
+  (Session info: chrome=97.0.4692.99)
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 65, in test_2_data_center_mange
+    data_center.data_center_leader()
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\left_page.py", line 51, in data_center_leader
+    self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/button').click()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div[1]/button"}
+  (Session info: chrome=97.0.4692.99)
+
+
 
         </pre>
     </div>
@@ -288,31 +311,54 @@ pt1.3:
     </td>
 </tr>
 
-<tr class='passClass'>
-    <td>test_login.Test_login</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
-
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_yn_login_1_case1: test_yn_login_1_case1</div></td>
+<tr id='ft1.3' class='none'>
+    <td class='errorCase'><div class='testcase'>test_3_backcolor_mange</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
+        error</a>
 
-    <div id='div_pt2.1' class="popup_window">
+    <div id='div_ft1.3' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt2.1: 
+ft1.3: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 72, in test_3_backcolor_mange
+    zutai.backcolor_button()
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\zutaimange_page.py", line 23, in backcolor_button
+    self.driver.find_element(By.XPATH, '//*[@id="formBar"]/aside[1]/div/div[2]/div/div[1]/div/div[1]').click()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;div data-v-13fbf427="" class="button-box-item"&gt;...&lt;/div&gt; is not clickable at point (1148, 149). Other element would receive the click: &lt;div data-v-04cc0a07="" class="el-dialog__wrapper" style="z-index: 2001;"&gt;...&lt;/div&gt;
+  (Session info: chrome=97.0.4692.99)
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 72, in test_3_backcolor_mange
+    zutai.backcolor_button()
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\zutaimange_page.py", line 23, in backcolor_button
+    self.driver.find_element(By.XPATH, '//*[@id="formBar"]/aside[1]/div/div[2]/div/div[1]/div/div[1]').click()
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
+    return self._parent.execute(command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;div data-v-13fbf427="" class="button-box-item"&gt;...&lt;/div&gt; is not clickable at point (1148, 149). Other element would receive the click: &lt;div data-v-04cc0a07="" class="el-dialog__wrapper" style="z-index: 2001;"&gt;...&lt;/div&gt;
+  (Session info: chrome=97.0.4692.99)
+
+
 
         </pre>
     </div>
@@ -323,10 +369,10 @@ pt2.1:
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>4</td>
-    <td>4</td>
+    <td>3</td>
+    <td>1</td>
     <td>0</td>
-    <td>0</td>
+    <td>2</td>
     <td> </td>
 </tr>
 </table>
@@ -378,7 +424,7 @@ pt2.1:
                 data: [
 
                     {
-                        value: 0,
+                        value: 2,
                         name: '失败'
                     },
                     {
@@ -386,7 +432,7 @@ pt2.1:
                         name: '未通过'
                     },
                     {
-                        value: 4,
+                        value: 1,
                         name: '通过'
                     },
 
