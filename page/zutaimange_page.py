@@ -8,12 +8,14 @@ class ZutaimangePage:
     def __init__(self, driver):
         self.driver = driver
 
+    # ------顶部按钮---------------------------------------------
     # 点击保存
     def slave_button(self):
         time.sleep(1)
         self.driver.find_element(By.XPATH, '//*[@id="app"]/section/header/div/div[4]/a[2]').click()
         time.sleep(1)
 
+    # ------页面属性---------------------------------------------
     # 背景色
     def backcolor_button(self):
         time.sleep(1)
@@ -134,3 +136,8 @@ class ZutaimangePage:
             return True
         else:
             return False
+
+    # -----左侧控件---------------------------------------
+    # 数显框
+    def digital_display_frame(self):
+        self.driver.find_element(By.XPATH, '//*[@id="el-collapse-content-1842"]/div/ul/li[1]').click()

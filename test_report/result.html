@@ -194,9 +194,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>测试报告</h1>
-<p class='attribute'><strong>Start Time:</strong> 2022-02-03 19:07:00</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:42.624086</p>
-<p class='attribute'><strong>Status:</strong> Pass 1 Error 2</p>
+<p class='attribute'><strong>Start Time:</strong> 2022-02-03 22:02:46</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:33.024218</p>
+<p class='attribute'><strong>Status:</strong> Error 4</p>
 
 <p class='description'></p>
 </div>
@@ -228,29 +228,65 @@ function showOutput(id, name) {
 
 <tr class='errorClass'>
     <td>test_data_center.Test_data_center</td>
-    <td>3</td>
-    <td>1</td>
+    <td>4</td>
     <td>0</td>
-    <td>2</td>
-    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
+    <td>0</td>
+    <td>4</td>
+    <td><a href="javascript:showClassDetail('c1',4)">Detail</a></td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_1_login_1_case1: test_1_login_1_case1</div></td>
+<tr id='ft1.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_1_login_1_case1: test_1_login_1_case1</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        error</a>
 
-    <div id='div_pt1.1' class="popup_window">
+    <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1: 
+ft1.1: Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 40, in test_1_login
+    self.login(name, password)
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 31, in login
+    lg.name_input(name)
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\login_page.py", line 11, in name_input
+    self.driver.find_element(By.XPATH, '//*[@id="app"]/div[1]/div[2]/div/form/div[2]/div/div/input').send_keys(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div[1]/div[2]/div/form/div[2]/div/div/input"}
+  (Session info: chrome=97.0.4692.99)
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\ddt.py", line 191, in wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 40, in test_1_login
+    self.login(name, password)
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 31, in login
+    lg.name_input(name)
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\login_page.py", line 11, in name_input
+    self.driver.find_element(By.XPATH, '//*[@id="app"]/div[1]/div[2]/div/form/div[2]/div/div/input').send_keys(
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/div[1]/div[2]/div/form/div[2]/div/div/input"}
+  (Session info: chrome=97.0.4692.99)
+
+
 
         </pre>
     </div>
@@ -275,31 +311,31 @@ pt1.1:
         <pre>
         
 ft1.2: Traceback (most recent call last):
-  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 65, in test_2_data_center_mange
-    data_center.data_center_leader()
-  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\left_page.py", line 51, in data_center_leader
-    self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/button').click()
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 53, in test_2_data_center_mange
+    mange.management_button()
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\top_page.py", line 23, in management_button
+    self.driver.find_element(By.XPATH, '//*[@id="app"]/section/header/div/ul/li[4]').click()
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
     return self.execute(Command.FIND_ELEMENT, {
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div[1]/button"}
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/section/header/div/ul/li[4]"}
   (Session info: chrome=97.0.4692.99)
 
 Traceback (most recent call last):
-  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 65, in test_2_data_center_mange
-    data_center.data_center_leader()
-  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\left_page.py", line 51, in data_center_leader
-    self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[1]/button').click()
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 53, in test_2_data_center_mange
+    mange.management_button()
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\top_page.py", line 23, in management_button
+    self.driver.find_element(By.XPATH, '//*[@id="app"]/section/header/div/ul/li[4]').click()
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
     return self.execute(Command.FIND_ELEMENT, {
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div[1]/button"}
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="app"]/section/header/div/ul/li[4]"}
   (Session info: chrome=97.0.4692.99)
 
 
@@ -329,33 +365,81 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 ft1.3: Traceback (most recent call last):
   File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 72, in test_3_backcolor_mange
     zutai.backcolor_button()
-  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\zutaimange_page.py", line 23, in backcolor_button
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\zutaimange_page.py", line 20, in backcolor_button
     self.driver.find_element(By.XPATH, '//*[@id="formBar"]/aside[1]/div/div[2]/div/div[1]/div/div[1]').click()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;div data-v-13fbf427="" class="button-box-item"&gt;...&lt;/div&gt; is not clickable at point (1148, 149). Other element would receive the click: &lt;div data-v-04cc0a07="" class="el-dialog__wrapper" style="z-index: 2001;"&gt;...&lt;/div&gt;
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="formBar"]/aside[1]/div/div[2]/div/div[1]/div/div[1]"}
   (Session info: chrome=97.0.4692.99)
 
 Traceback (most recent call last):
   File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 72, in test_3_backcolor_mange
     zutai.backcolor_button()
-  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\zutaimange_page.py", line 23, in backcolor_button
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\zutaimange_page.py", line 20, in backcolor_button
     self.driver.find_element(By.XPATH, '//*[@id="formBar"]/aside[1]/div/div[2]/div/div[1]/div/div[1]').click()
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webelement.py", line 80, in click
-    self._execute(Command.CLICK_ELEMENT)
-  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webelement.py", line 633, in _execute
-    return self._parent.execute(command, params)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
     self.error_handler.check_response(response)
   File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.ElementClickInterceptedException: Message: element click intercepted: Element &lt;div data-v-13fbf427="" class="button-box-item"&gt;...&lt;/div&gt; is not clickable at point (1148, 149). Other element would receive the click: &lt;div data-v-04cc0a07="" class="el-dialog__wrapper" style="z-index: 2001;"&gt;...&lt;/div&gt;
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="formBar"]/aside[1]/div/div[2]/div/div[1]/div/div[1]"}
+  (Session info: chrome=97.0.4692.99)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.4' class='none'>
+    <td class='errorCase'><div class='testcase'>test_4_page_key</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
+        error</a>
+
+    <div id='div_ft1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.4: Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 122, in test_4_page_key
+    if zutai.read_set_page_key():
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\zutaimange_page.py", line 131, in read_set_page_key
+    var = self.driver.find_element(By.XPATH, '//*[@id="formBar"]/aside[1]/div/div[2]/'
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="formBar"]/aside[1]/div/div[2]/div/div[3]/div[2]/div[1]/label/span[1]"}
+  (Session info: chrome=97.0.4692.99)
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\test_case\test_data_center.py", line 122, in test_4_page_key
+    if zutai.read_set_page_key():
+  File "C:\Users\Administrator\PycharmProjects\pythonProject\emcp\page\zutaimange_page.py", line 131, in read_set_page_key
+    var = self.driver.find_element(By.XPATH, '//*[@id="formBar"]/aside[1]/div/div[2]/'
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "C:\Users\Administrator\AppData\Local\Programs\Python\Python39\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="formBar"]/aside[1]/div/div[2]/div/div[3]/div[2]/div[1]/label/span[1]"}
   (Session info: chrome=97.0.4692.99)
 
 
@@ -369,10 +453,10 @@ selenium.common.exceptions.ElementClickInterceptedException: Message: element cl
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>3</td>
-    <td>1</td>
+    <td>4</td>
     <td>0</td>
-    <td>2</td>
+    <td>0</td>
+    <td>4</td>
     <td> </td>
 </tr>
 </table>
@@ -424,7 +508,7 @@ selenium.common.exceptions.ElementClickInterceptedException: Message: element cl
                 data: [
 
                     {
-                        value: 2,
+                        value: 4,
                         name: '失败'
                     },
                     {
@@ -432,7 +516,7 @@ selenium.common.exceptions.ElementClickInterceptedException: Message: element cl
                         name: '未通过'
                     },
                     {
-                        value: 1,
+                        value: 0,
                         name: '通过'
                     },
 
